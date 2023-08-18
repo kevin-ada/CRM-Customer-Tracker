@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+
+{% block content %}
+<a href="{%  url 'leads:view_leads'  %}">Back to leads</a>
+<br>
+<br>
+<h1>User-Lead-Detail for {{lead.first_name}} {{lead.last_name}}</h1>
+Age of the Lead {{lead.age}}
+<br>
+<br>
+Agent Assigned to {{lead.agent}}
+
+<br>
+<br>
+
+<a href="{% url 'leads:lead_update' pk=lead.id %}">Update Details</a>
+
+<br>
+<br>
+
+<a href="{% url 'leads:lead_delete' pk=lead.id %}">Delete Lead</a>
+
+{% endblock %}
