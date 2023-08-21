@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Extension Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
 
     <style>
@@ -21,9 +22,13 @@
     </style>
 </head>
 <body>
-{% block content %}
+<div class="max-w-6xl mx-auto">
+    {% include 'navbar.html' %}
+    {% block content %}
 
-{% endblock content %}
+    {% endblock content %}
+
+</div>
 
 </body>
 </html>

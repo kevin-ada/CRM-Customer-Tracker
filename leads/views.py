@@ -33,8 +33,7 @@ def lead_create(request):
         if form.is_valid():
             form.save()
             print("A lead has been Created")
-            return redirect("/leads")
-
+            return redirect("/leads/landing")
     else:
         context = {
             "form": form
@@ -50,7 +49,7 @@ def lead_update_view(request, pk):
         form = LeadModelFormReg(request.POST, instance=lead)
         if form.is_valid():
             form.save()
-            return redirect("/leads")
+            return redirect("/leads/view")
     context = {
         "lead": lead,
         "form": form
@@ -62,4 +61,4 @@ def lead_update_view(request, pk):
 def lead_delete_view(request, pk):
     lead = Leads.objects.get(id=pk)
     lead.delete()
-    return redirect("/leads")
+    return redirect("/leads/view")
